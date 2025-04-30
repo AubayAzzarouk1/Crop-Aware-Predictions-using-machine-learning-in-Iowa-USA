@@ -1,0 +1,74 @@
+TinyCropNet Download and Setup:
+#=============================================
+-Clones TinyCropNet but immediately removes the huge Sentinel-2 folder.
+-Manually downloads only the Sentinel-2 .h5 files needed (April–September).
+-Organizes files into the correct TinyCropNet/Sentinel-2 Imagery/data/[year]/IA/ structure.
+-Verifies downloads with ls checks.
+#=============================================
+# 1.Checking available disk space (optional)
+!df -h
+# =============================================
+#2.Download/Clone TinyCropNet EXCLUDING Sentinel-2 Imagery
+!git clone https://huggingface.co/datasets/fudong03/Tiny-CropNet
+!rm -rf Tiny-CropNet/Sentinel-2\ Imagery
+# =============================================
+# 3.Download Sentinel-2 .h5 imagery by quarter (space-efficient)
+# 2017–2022 (April–Sept: Growing Season Windows)
+
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/
+
+#Loop-friendly download (break this into chunks per session to save space)
+#2017
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2017/IA/
+
+!wget -P Tiny-CropNet/Sentinel-2\ Imagery/data/2017/IA/ https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2017/IA/Agriculture_19_IA_2017-04-01_2017-06-30.h5
+
+!wget -P Tiny-CropNet/Sentinel-2\ Imagery/data/2017/IA/ https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2017/IA/Agriculture_19_IA_2017-07-01_2017-09-30.h5
+#=============================================
+#Repeat download for other years (2018-22)
+
+#2018
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2018/IA/
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2018/IA/Agriculture_19_IA_2018-04-01_2018-06-30.h5
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2018/IA/Agriculture_19_IA_2018-07-01_2018-09-30.h5
+
+#2019:
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2019/IA/
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2019/IA/Agriculture_19_IA_2019-04-01_2019-06-30.h5
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2019/IA/Agriculture_19_IA_2019-07-01_2019-09-30.h5
+
+#2020
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2020/IA/
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2020/IA/Agriculture_19_IA_2020-04-01_2020-06-30.h5
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2020/IA/Agriculture_19_IA_2020-07-01_2020-09-30.h5
+
+#2021
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2021/IA/
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2021/IA/Agriculture_19_IA_2021-04-01_2021-06-30.h5
+
+!wget https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2021/IA/Agriculture_19_IA_2021-07-01_2021-09-30.h5
+
+
+#2022
+!mkdir -p Tiny-CropNet/Sentinel-2\ Imagery/data/2022/IA/
+
+!wget -P Tiny-CropNet/Sentinel-2\ Imagery/data/2022/IA/ https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2022/IA/Agriculture_19_IA_2022-04-01_2022-06-30.h5
+
+!wget -P Tiny-CropNet/Sentinel-2\ Imagery/data/2022/IA/ https://huggingface.co/datasets/fudong03/Tiny-CropNet/resolve/main/Sentinel-2%20Imagery/data/2022/IA/Agriculture_19_IA_2022-07-01_2022-09-30.h5
+
+# =============================================
+# 4. Verifying successful download + structure
+!pwd
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2017/IA/
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2018/IA/
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2019/IA/
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2020/IA/
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2021/IA/
+!ls -lh Tiny-CropNet/Sentinel-2\ Imagery/data/2022/IA/
