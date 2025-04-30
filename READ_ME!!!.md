@@ -5,6 +5,8 @@ Parent Paper: "Open and Large-Scale Dataset for Multi-Modal Climate Change-aware
 
   1a) To run the baseline, you need to import (or reference class(es): 
     - build_config_soybean.py 
+    - attention.py
+    - contrastive_loss.py
     - main_finetune_mmst_vit.py
     - main_pretrain_mmst_vit.py
     - models_pvt.py
