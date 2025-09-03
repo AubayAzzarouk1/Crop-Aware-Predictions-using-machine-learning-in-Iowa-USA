@@ -1,4 +1,4 @@
-DS440W - Group 26
+Code-Demo Helpbook:
 
 1) MMST-ViT-Baseline: Full implementation of how to verify and replicate the results to that of:
 Parent Paper: "Open and Large-Scale Dataset for Multi-Modal Climate Change-aware Crop Yield Predictions" by Fudong Lin et. al (2022)
