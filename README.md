@@ -20,7 +20,7 @@ We adopted the **MMST-ViT** architecture for multimodal yield prediction at the 
 
 Below is a grid of Sentinel-2 bands (B1–B8), including coastal, blue, green, red, red edge, and NIR. These image patches are sampled at 384×384 resolution and serve as visual input to the PvT backbone within MMST-ViT.
 
-![Sentinel-2 Bands Grid](images/sentinel_band_grid.png)
+![Sentinel-2 Bands Grid](sentinel-2 Imagery Visualization.png)
 
 ---
 
