@@ -97,4 +97,54 @@ Below is a grid of Sentinel-2 bands (B1–B8), including coastal, blue, green, r
 
 
 
+## 📄 Extended Research & Alternative Approaches
+
+This repository accompanies the research project:
+
+**"Assessing the Impacts of Climate Change on Soybean and Corn Yields and Their Broader Economic Consequences"**  
+by Aubay Azzarouk, Penn State University (2025)
+
+📥 [Download Full Report (PDF)](./Assessing%20the%20Impacts%20of%20Climate%20Change%20on%20Soybean%20and%20Corn%20Yields%20and%20Their%20Broader%20Economic%20Consequences.pdf)
+
+---
+
+### 🔬 Summary
+
+This work investigates the impact of climate variability—including rising temperatures, shifting precipitation, and extreme weather—on soybean yield across Iowa’s primary agricultural zones. Using a modified version of the **MMST-ViT** model, we fuse Sentinel-2 imagery, HRRR reanalysis weather data, and USDA yield records to predict county-level yield outcomes from 2017–2022.
+
+Highlights:
+- ✅ Achieved **R² ≈ 0.885** and **RMSE ≈ 2.7 BU/acre**
+- ✅ Identified spatial yield risks and temporal patterns
+- ✅ Produced visual diagnostics of region-specific grid performance
+- ✅ Flagged key outlier counties with high/low yield volatility
+
+This pipeline enhances **evidence-based decision-making** for farmers and policymakers, with direct implications for precision agriculture, crop insurance design, and climate adaptation.
+
+---
+
+### 🧪 Parent Model Reference
+
+This project draws inspiration from and extends upon the baseline proposed in:
+
+**"A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction"**  
+by Joshua Fan et al., Cornell University
+
+📖 [Download GNN-RNN Paper (PDF)](./Alternative%20Approach%20Parent%20Paper.pdf)
+
+Their GNN-RNN framework captures both spatial and temporal dependencies across counties in the U.S. and achieves state-of-the-art results in national-scale yield prediction. While their model emphasizes **geographic graph structure**, MMST-ViT explores **pixel-to-county multimodal fusion** with image tokens and transformer attention.
+
+---
+
+### 🔄 Ongoing Work: Region-Level MMST-ViT (Experimental Branch)
+
+We are currently experimenting with a **region-level adaptation of MMST-ViT**, where yield predictions are grouped by **Agricultural Statistics Districts (ASDs)** instead of individual counties. This alternative pipeline aims to:
+
+- 🌍 Reduce noise from small counties with sparse Sentinel-2 imagery
+- 🔎 Emphasize broader spatial correlations (e.g., SW vs. NE Iowa)
+- 🌱 Provide smoother, regionally interpretable predictions for stakeholders
+
+Planned enhancements include:
+- 🛰️ **NDVI integration** using Sentinel-2 NIR + Red bands  
+- 📦 **MMST-ViT embeddings** reused in secondary classifiers  
+- 🧠 **Model explainability** via attention weight visualization and risk maps
 
